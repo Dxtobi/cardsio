@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.box-shadow {
+    box-shadow: 0px 10px 20px -5px #46e6ff2f;
+}
+
+.brand{
+ font-weight: bolder;
+}
+
+.hero-text {
+    font-size: 35px;
+}
