@@ -45,10 +45,10 @@ export default function CreateProfile({user}) {
     }
 
     return (
-        <div className="w-full md:w-[50%] ">
+        <div className="w-full  ">
             <div className="w-full p-5">
                 <form onSubmit={handleSubmit(onSubmitForm)}>
-                    <input className="p-3 bg-gray-100 rounded-md w-full outline-none mb-2" type='text' value={user?.name} {...register('name', { required: true })} placeholder="Name" />
+                    <input className="p-3 bg-gray-100 rounded-md w-full outline-none mb-2" type='text'  {...register('name', { required: true })} placeholder="Name" />
                     <input className="p-3 bg-gray-100 rounded-md w-full outline-none mb-2" type='text' {...register('occupation', { required: true })} placeholder="Occupation" />
                     <input className="p-3 bg-gray-100 rounded-md w-full outline-none mb-2" type='email' value={user?.email} {...register('email', { required: true })} placeholder="email" />
                     <input className="p-3 bg-gray-100 rounded-md w-full outline-none mb-2" type='tell' {...register('phone', { required: true })} placeholder="Phone Optional" />

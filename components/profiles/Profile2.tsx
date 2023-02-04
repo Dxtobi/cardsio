@@ -2,24 +2,26 @@
 import { useRouter } from "next/router";
 
 
-export default function Card1({ profile }) {
+export default function Profile2({ profile }) {
 
 
-    const router = useRouter()
-    console.log(profile)
+    //const router = useRouter()
+    //console.log(profile)
 
     return (
         <>
-            <button className="w-1/4 p-2 bg-purple-900 text-white rounded-md my-3" onClick={() => router.back()}>Back</button>
-            <div className="w-full box-shadow p-3 bg-purple-500 text-white rounded-md">
+            
+            <div className="w-full h-[100vh] box-shadow p-3 bg-gray-300 text-white pt-20">
                 
                 <br />
-                <div className="w-full h-[25vh] bg-purple-900 flex justify-center items-center rounded-md" >
-                    <img src={profile.image} alt="" className="w-[100px] h-[100px] rounded-lg" />
+                <div className="w-full h-[30vh] bg-purple-900 relative mb-[60px] rounded-2xl" >
+                    <div className="capitalize m-3 text-3xl absolute left-0 right-0 text-center top-[30%]">{profile.occupation}</div>
+                    <div className="flex border-custom   items-center justify-center w-[110px] h-[110px] rounded-full bottom-[-50px] absolute left-0 right-0 place-items-center m-auto">
+                        <img src={profile.image} alt="" className="w-[100px] h-[100px] rounded-full " />
+                    </div>
                 </div>
-                <div className="flex flex-col items-center">
-                    <div className="text-3xl font-semibold uppercase m-3">{profile.name}</div>
-                    <div className="capitalize m-3">{profile.occupation}</div>
+                <div className="flex flex-col items-center bg-white text-black p-5 rounded-2xl py-10 mt-[-50px]">
+                    <div className="text-3xl font-semibold uppercase m-1">{profile.name}</div>
                     <div className="capitalize m-3">
                         {profile.email}
                     </div>

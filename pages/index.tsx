@@ -8,11 +8,15 @@ import NotSignedIn from '../components/NotSignedIn';
 import SignedIn from '../components/SignedIn';
 import GetCardComp from './card';
 import { useState } from 'react';
+import IndeCard from '../components/cards/IndeCard';
+import CarouselElement from '../components/carosel/CaroselElelement';
 
 
-const Home: NextPage = ({session, profile}) => {
 
-  //console.log(profile);
+
+const Home: NextPage = ({session, profile, profiles}) => {
+
+  //console.log(profiles);
   const [editing, setEditing] = useState();
 
   return (
@@ -35,6 +39,21 @@ const Home: NextPage = ({session, profile}) => {
             query: profile, // the data
           }}>View</Link>}
           <br />
+
+
+          <div className='text-center font-semibold text-xl'>
+            Resent Users
+          </div>
+          
+  
+
+
+          
+
+          <div className='my-5'>
+            <CarouselElement profiles={profiles} />
+          </div>
+
         <button className='p-4 bg-slate-900 text-white rounded-lg w-[100%]' onClick={() => signOut()}>Sign out</button>
       </>
       )}
@@ -62,11 +81,13 @@ export async function getServerSideProps(context: any) {
     }
   }
   const profile = await prisma.profile.findUnique({ where: { email: session?.user?.email } });
+  const profiles = await prisma.profile.findMany({ take:-3 });
   //console.log(session, profile);
   return {
     props: {
       session,
-      profile
+      profile,
+      profiles
     },
   }
 }

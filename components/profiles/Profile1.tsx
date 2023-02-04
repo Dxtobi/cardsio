@@ -2,25 +2,25 @@
 import { useRouter } from "next/router";
 
 
-export default function Card1({ profile }) {
+export default function Profile1({ profile }) {
 
 
-    const router = useRouter()
-    console.log(profile)
+    //const router = useRouter()
+    //console.log(profile)
 
     return (
         <>
-            <button className="w-1/4 p-2 bg-purple-900 text-white rounded-md my-3" onClick={() => router.back()}>Back</button>
-            <div className="w-full box-shadow p-3 bg-purple-500 text-white rounded-md">
+            
+            <div className="w-full h-[100vh] box-shadow p-3 bg-gray-300 text-gray-900 pt-20">
                 
                 <br />
-                <div className="w-full h-[25vh] bg-purple-900 flex justify-center items-center rounded-md" >
+                <div className="w-full h-[25vh] bg-gray-900 flex justify-center items-center rounded-t-xl" >
                     <img src={profile.image} alt="" className="w-[100px] h-[100px] rounded-lg" />
                 </div>
-                <div className="flex flex-col items-center">
+                <div className="flex flex-col items-center bg-gray-900 text-white rounded-b-xl mt-1">
                     <div className="text-3xl font-semibold uppercase m-3">{profile.name}</div>
-                    <div className="capitalize m-3">{profile.occupation}</div>
-                    <div className="capitalize m-3">
+                    <div className="capitalize m-1 text-xl">{profile.occupation}</div>
+                    <div className="capitalize m-2">
                         {profile.email}
                     </div>
                     <div className="text-center m-3">{profile.bio}</div>

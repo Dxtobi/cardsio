@@ -14,3 +14,13 @@
 .hero-text {
     font-size: 35px;
 }
+
+.header_div {
+    
+    backdrop-filter: blur(13px);
+}
+
+.border-custom{
+   
+        border: 3px solid #581c87;
+    }

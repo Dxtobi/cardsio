@@ -2,15 +2,15 @@ import Head from 'next/head';
 import Image from 'next/image';
 
 export default function Navbar({profile}) {
-    //console.log('params:::', params)
+    console.log('params:::', profile)
     return (
       <>
             <Head>
-            <title>Online Card</title>
+          <title>{profile.profile?.name} | {profile.session?.user?.name}</title>
             <link rel="icon" href="/favicon.ico" />
             </Head>
             
-            <div className='flex items-center justify-between p-5 fixed top-0 right-0 w-full box-shadow bg-white'>
+            <div className='z-50 flex items-center justify-between p-5 fixed top-0 right-0 w-full box-shadow  header_div'>
                 <div className='brand'>
                     <span className='text-gray-400'>Kard</span>Swap
                 </div>
