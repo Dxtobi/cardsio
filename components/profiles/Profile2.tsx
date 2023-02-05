@@ -1,5 +1,6 @@
 
 import { useRouter } from "next/router";
+import { AiOutlineTwitter, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 
 
 export default function Profile2({ profile }) {
@@ -32,14 +33,14 @@ export default function Profile2({ profile }) {
 
                     <div className="flex gap-3 my-5">
                     
-                        {profile.twitter && <div className="w-[10vh] h-[10vh] rounded-full bg-purple-900 flex justify-center items-center">
-                            <a href={profile.twitter} className='text-white'>Twitter</a>
+                    {profile.twitter && <div className="w-[10vh] h-[10vh] rounded-full bg-purple-700 flex justify-center items-center">
+                            <a href={profile.twitter} className='text-white'><AiOutlineTwitter  size={30}/></a>
                         </div>}
-                        {profile.instagram && <div className="w-[10vh] h-[10vh] rounded-full bg-purple-900 flex justify-center items-center">
-                            <a href={profile.instagram} className='text-white'>Insta</a>
+                        {profile.instagram && <div className="w-[10vh] h-[10vh] rounded-full bg-purple-700 flex justify-center items-center">
+                            <a href={profile.instagram} className='text-white'><AiFillInstagram  size={30}/></a>
                         </div>}
-                        {profile.linkedin && <div className="w-[10vh] h-[10vh] rounded-full bg-purple-900 flex justify-center items-center">
-                            <a href={profile.instagram} className='text-white'>Lindn</a>
+                        {profile.linkedin && <div className="w-[10vh] h-[10vh] rounded-full bg-purple-700 flex justify-center items-center">
+                            <a href={profile.linkedin} className='text-white'><AiFillLinkedin  size={30}/></a>
                         </div>}
                     </div>
 

@@ -34,7 +34,13 @@ export async function getServerSideProps(context: any) {
     const prisma = new PrismaClient();
     //console.log(context.query.id);
     const idType = context.query.type
-
+    if (!context.query?.id) {
+      return {
+        props: {
+          
+        }
+      }
+    }
     const profile = await prisma.profile.findUnique({ where: { id: context.query?.id } });
     //console.log(profile);
     return {

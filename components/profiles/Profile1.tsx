@@ -1,7 +1,8 @@
 
-import { useRouter } from "next/router";
 
 
+
+import {AiFillInstagram, AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai'
 export default function Profile1({ profile }) {
 
 
@@ -26,18 +27,18 @@ export default function Profile1({ profile }) {
                     <div className="text-center m-3">{profile.bio}</div>
                     <div>{profile.phone}</div>
                     
-                    <a href={profile.slug} className="bg-purple-900 text-white w-1/2  p-2 m-3 rounded-lg text-center">More</a>
+                    <a href={profile.slug} className="bg-gray-800 text-white w-1/2  p-2 m-3 rounded-lg text-center">More</a>
 
                     <div className="flex gap-3 my-5">
                     
-                        {profile.twitter && <div className="w-[10vh] h-[10vh] rounded-full bg-purple-900 flex justify-center items-center">
-                            <a href={profile.twitter} className='text-white'>Twitter</a>
+                        {profile.twitter && <div className="w-[10vh] h-[10vh] rounded-full bg-gray-700 flex justify-center items-center">
+                            <a href={profile.twitter} className='text-white'><AiOutlineTwitter  size={30}/></a>
                         </div>}
-                        {profile.instagram && <div className="w-[10vh] h-[10vh] rounded-full bg-purple-900 flex justify-center items-center">
-                            <a href={profile.instagram} className='text-white'>Insta</a>
+                        {profile.instagram && <div className="w-[10vh] h-[10vh] rounded-full bg-gray-700 flex justify-center items-center">
+                            <a href={profile.instagram} className='text-white'><AiFillInstagram  size={30}/></a>
                         </div>}
-                        {profile.linkedin && <div className="w-[10vh] h-[10vh] rounded-full bg-purple-900 flex justify-center items-center">
-                            <a href={profile.instagram} className='text-white'>Lindn</a>
+                        {profile.linkedin && <div className="w-[10vh] h-[10vh] rounded-full bg-gray-700 flex justify-center items-center">
+                            <a href={profile.linkedin} className='text-white'><AiFillLinkedin  size={30}/></a>
                         </div>}
                     </div>
 

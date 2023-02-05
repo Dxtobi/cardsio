@@ -10,7 +10,9 @@ export default function NotSignedIn() {
                   <span className="w-4 h-4 bg-indigo-700 rounded-full">&nbsp; </span>
               </div>
               <p>
-                  Create beautiful profile cards and shear with your friends and also shear on professional platforms, its all free and open you can get contribute to kardswap 😉.
+          Create beautiful profile cards and shear with your friends and also shear on professional platforms, it's all free and open, you can contribute to kardswap 😉.
+          <a href="https://github.com/Dxtobi/cardsio"> Github</a> 
+
               </p>
           </div>
           

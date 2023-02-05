@@ -14,7 +14,7 @@ export default function Navbar({profile}) {
                 <div className='brand'>
                     <span className='text-gray-400'>Kard</span>Swap
                 </div>
-                {profile&&<img src={`${profile.image}`} className='rounded-full' alt="avatar" width={30} height={30} />}
+                {profile.session&&<img src={`${profile.session.user.image}`} className='rounded-full' alt="avatar" width={30} height={30} />}
             </div>
       </>
     )
