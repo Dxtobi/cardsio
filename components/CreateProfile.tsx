@@ -15,8 +15,9 @@ interface Value {
     image?: string
 }
 
-export default function CreateProfile({user}) {
+export default function CreateProfile(params: { user: any; }) {
 
+    const { user } = params
     const router = useRouter()
     
     const { register, handleSubmit } = useForm();

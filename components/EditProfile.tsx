@@ -16,7 +16,9 @@ interface Value {
     image?: string
 }
 
-export default function EditProfile({profile}) {
+export default function EditProfile(params: { profile: any; }) {
+
+    const { profile } = params
 
     const router = useRouter()
     

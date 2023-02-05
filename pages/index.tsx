@@ -1,23 +1,22 @@
 import { PrismaClient } from '@prisma/client';
-import type { NextPage } from 'next';
 import { signIn, signOut, getSession } from "next-auth/react";
 import Link from 'next/link';
 import Image from 'next/image';
 import CreateProfile from '../components/CreateProfile';
 import NotSignedIn from '../components/NotSignedIn';
 import SignedIn from '../components/SignedIn';
-import GetCardComp from './card';
-import { useState } from 'react';
-import IndeCard from '../components/cards/IndeCard';
+
 import CarouselElement from '../components/carosel/CaroselElelement';
 
 
 
 
-const Home: NextPage = ({session, profile, profiles}) => {
+const Home = (params: { session: any; profile: any; profiles: any; }) => {
+
+  const {session, profile, profiles} = params
 
   //console.log(profiles);
-  const [editing, setEditing] = useState();
+  //const [editing, setEditing] = useState();
 
   return (
     <div className="flex min-h-[70vh] flex-col items-center  p-5 mt-20">

@@ -8,7 +8,9 @@ import Profile1 from "../components/profiles/Profile1";
 import Profile2 from "../components/profiles/Profile2";
 
 
-export default function Profile({ profile, idType }) {
+export default function Profile(params: { profile: object; idType: number; }) {
+
+  const { profile, idType } = params
     //const 
     
 

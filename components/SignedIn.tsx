@@ -1,13 +1,14 @@
 
 
-export default function SignedIn({user}) {
+export default function SignedIn(params: { user: any }) {
+    const {user} = params
     return (
       <>
             <div className="">
                 <div className="text-gray-500 hero-text brand">
                     <h4 >Hi</h4>
                     <h1 className="text-gray-800">{ user.name}</h1>
-                    <div>You Already Created A Beautiful <span className="text-gray-800">Cards.</span></div>
+                    <div>You Already Created Beautiful <span className="text-gray-800">Cards.</span></div>
                 </div>
                 <br/>
                 <h2>

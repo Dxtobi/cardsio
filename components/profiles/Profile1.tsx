@@ -3,9 +3,9 @@
 
 
 import {AiFillInstagram, AiFillLinkedin, AiOutlineTwitter} from 'react-icons/ai'
-export default function Profile1({ profile }) {
+export default function Profile1(params:{ profile: any }) {
 
-
+    const {profile} = params
     //const router = useRouter()
     //console.log(profile)
 

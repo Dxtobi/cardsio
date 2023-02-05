@@ -1,11 +1,13 @@
 
 import { profile } from 'console';
 import Carousel from 'nuka-carousel/lib/carousel';
+import { Key } from 'react';
 import IndeCard from '../cards/IndeCard';
 
 
-export default function CarouselElement({profiles}) {
+export default function CarouselElement(params: { profiles: any; }) {
 
+    const {profiles} = params
   
     return (
         <Carousel
@@ -22,10 +24,10 @@ export default function CarouselElement({profiles}) {
             )}
             animation="zoom"
             autoplay={true}
-            autoplayInterval={2}
+            autoplayInterval={50}
             >
             {
-                profiles.map((profile, index) => (
+                profiles.map((profile: any, index: Key | null | undefined) => (
                     <IndeCard profile={profile} key={index} />
                 ))
             }
