@@ -23,7 +23,11 @@ export default async function (req:NextApiRequest, res:NextApiResponse) {
         if (!session) {
             return res.status(401).json({message:'not login'})
         }
-    
+        interface User {
+            email: string;
+          }
+        const sessionUser = session?.user as User;
+        
         const profile = await prisma.profile.create({
             data: {
                 name,
@@ -37,7 +41,7 @@ export default async function (req:NextApiRequest, res:NextApiResponse) {
                 occupation,
                 image,
                 slug,
-                user: {connect: {email: session.user?.email}}
+                user: {connect: {email: sessionUser?.email}}
             }
         });
     

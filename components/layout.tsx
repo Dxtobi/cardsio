@@ -4,7 +4,7 @@ import Footer from './footer'
 export default function Layout(params: { [x: string]: any; children: any }) {
 
   const { children, ...others } = params
-    //console.log("layout:", others)
+   // console.log("layout:", others)
   return (
     <>
         <Navbar profile={others} />

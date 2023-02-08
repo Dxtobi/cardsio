@@ -79,7 +79,12 @@ export async function getServerSideProps(context: any) {
       }, 
     }
   }
-  const profile = await prisma.profile.findUnique({ where: { email: session?.user?.email } });
+
+  interface User {
+    email: string;
+  }
+  const sessionUser = session?.user as User;
+  const profile = await prisma.profile.findUnique({ where: { email: sessionUser.email } });
   const profiles = await prisma.profile.findMany({ take:-3 });
   //console.log(session, profile);
   return {

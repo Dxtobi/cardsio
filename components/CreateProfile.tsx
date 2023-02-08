@@ -22,7 +22,7 @@ export default function CreateProfile(params: { user: any; }) {
     
     const { register, handleSubmit } = useForm();
     
-    const onSubmitForm = async (values: Value) => {
+    const onSubmitForm = async (values: any) => {
         try {
             values.image = user?.image;
             //console.log(values);
