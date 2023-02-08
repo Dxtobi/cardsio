@@ -2,8 +2,9 @@
 import Link  from "next/link";
 
 
-export default function Card1({ profile }) {
+export default function Card1(params: { profile: any; }) {
 
+    const { profile } = params
     const q = {
         id: profile.id,
         type:1000

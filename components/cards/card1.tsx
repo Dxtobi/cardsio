@@ -3,8 +3,9 @@ import { useRouter } from "next/router";
 import { AiOutlineTwitter, AiFillInstagram, AiFillLinkedin } from "react-icons/ai";
 
 
-export default function Card1({ profile }) {
+export default function Card1(params: { profile: any; }) {
 
+    const { profile } = params
 
     const router = useRouter()
     console.log(profile)

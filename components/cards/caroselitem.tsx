@@ -5,8 +5,9 @@
 import Link  from "next/link";
 import Image from "next/image"
 
-export default function Carousel({ profile }) {
+export default function Carousel(params: { profile: any; }) {
 
+    const { profile } = params;
     const q = {
         id: profile.id,
         type:1000
