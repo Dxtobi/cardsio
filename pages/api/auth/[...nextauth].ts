@@ -12,7 +12,11 @@ export default NextAuth({
     }),
     ],
     callbacks: {
-        session({ session, token, user }) {
+      session({ session, token, user }) {
+          console.log('session:::', session)
+          console.log('token:::', token)
+          console.log('user:::', user)
+
           return session // The return type will match the one returned in `useSession()`
         },
       },

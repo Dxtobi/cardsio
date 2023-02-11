@@ -51,6 +51,8 @@ export default async function (req:NextApiRequest, res:NextApiResponse) {
         return res.status(200).json(profile)
     } catch (error) {
        // console.log(error.message)
+       console.log('edit-profile-api line 54',error)
+        
         return res.status(500).send({message:'error',})
     }
 }
