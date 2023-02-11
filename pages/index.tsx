@@ -70,7 +70,8 @@ const Home = (params: { session: any; profile: any; profiles: any; }) => {
 
 
 export async function getServerSideProps(context: any) {
-  const prisma = new PrismaClient();
+  try {
+    const prisma = new PrismaClient();
   const session = await getSession(context);
   if (!session) {
     return {
@@ -93,6 +94,9 @@ export async function getServerSideProps(context: any) {
       profile,
       profiles
     },
+  }
+  } catch (error) {
+    console.log('99-index.tsx:::', error)
   }
 }
 export default Home

@@ -32,7 +32,8 @@ export default function Profile(params: { profile: object; idType: number; }) {
 
 export async function getServerSideProps(context: any) {
 
-
+  try {
+    
     const prisma = new PrismaClient();
     //console.log(context.query.id);
     const idType = context.query.type
@@ -51,4 +52,7 @@ export async function getServerSideProps(context: any) {
             idType
       },
     }
+  } catch (error) {
+    console.log("56-profile:::", error)
+  }
   }
