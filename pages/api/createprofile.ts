@@ -3,7 +3,6 @@ import { getSession } from 'next-auth/react';
 import { NextApiRequest, NextApiResponse } from 'next/types';
 
 const prisma = new PrismaClient()
-
 export default async function (req:NextApiRequest, res:NextApiResponse) {
     try {
         const {
@@ -28,6 +27,7 @@ export default async function (req:NextApiRequest, res:NextApiResponse) {
           }
         const sessionUser = session?.user as User;
         
+       // prisma.$connect()
         const profile = await prisma.profile.create({
             data: {
                 name,
@@ -44,8 +44,9 @@ export default async function (req:NextApiRequest, res:NextApiResponse) {
                 user: {connect: {email: sessionUser?.email}}
             }
         });
-    
+       // prisma.$disconnect()
         return res.status(200).json(profile)
+        
     } catch (error) {
         console.log('create-profile-api line 50',error)
         return res.status(500).send({message:'error ',})
