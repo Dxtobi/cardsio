@@ -40,7 +40,7 @@ export default function GetCardComp({ }) {
         <button onClick={swipeData} className='flex items-center justify-center fixed bottom-5 p-4 header_div text-gray-900 rounded-full w-[80px] h-[80px] my-3 right-5'><AiOutlineSwap size={30}/></button>
         <button onClick={() => {
           window.alert('Copied')
-          navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_DEFAULT_URL}/profile?id=${data.id}&type=${type}`)
+          navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_DEFAULT_URL == undefined&&'https://cardsio.vercel.app/'}/profile?id=${data.id}&type=${type}`)
         }}
           className='flex items-center justify-center fixed bottom-5 p-4 header_div text-gray-900 rounded-full w-[80px] h-[80px] my-3 left-5'><AiOutlineShareAlt size={30} /></button>
       </div>
